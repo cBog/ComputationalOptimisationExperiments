@@ -1,0 +1,59 @@
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: SimulatedAnnealing 
+SimulatedAnnealing:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: perturbation:0.5 perturbation:1.0 
+perturbation:0.5:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.5)
+perturbation:1.0:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 1.0)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: perturbation:0.5 perturbation:1.0 perturbation:0.2 
+perturbation:0.5:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.5)
+perturbation:1.0:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 1.0)
+perturbation:0.2:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.2)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: perturbation:1.0 perturbation:0.5 perturbation:0.2 faster cooling 
+perturbation:1.0:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 1.0)
+perturbation:0.5:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.5)
+perturbation:0.2:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.2)
+faster cooling:(initTemp 1.0E9)(expCoolingFactor 0.9)(minTemp 0.0)(perturbationFactor 0.2)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: perturbation:1.0 perturbation:0.5 perturbation:0.2 faster cooling 
+perturbation:1.0:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 1.0)
+perturbation:0.5:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.5)
+perturbation:0.2:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.2)
+faster cooling:(initTemp 1.0E9)(expCoolingFactor 0.9)(minTemp 0.0)(perturbationFactor 0.2)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+

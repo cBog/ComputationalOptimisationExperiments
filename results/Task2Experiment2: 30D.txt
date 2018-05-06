@@ -1,0 +1,23 @@
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: perturbation:0.2 faster cooling 
+perturbation:0.2:(initTemp 1.0E9)(expCoolingFactor 0.9)(minTemp 0.0)(perturbationFactor 0.2)
+faster cooling:(initTemp 1.0E9)(expCoolingFactor 0.8)(minTemp 0.0)(perturbationFactor 0.2)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: perturbation:0.2 faster cooling slow cooling 
+perturbation:0.2:(initTemp 1.0E9)(expCoolingFactor 0.9)(minTemp 0.0)(perturbationFactor 0.2)
+faster cooling:(initTemp 1.0E9)(expCoolingFactor 0.8)(minTemp 0.0)(perturbationFactor 0.2)
+slow cooling:(initTemp 1.0E9)(expCoolingFactor 0.99)(minTemp 0.0)(perturbationFactor 0.2)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
