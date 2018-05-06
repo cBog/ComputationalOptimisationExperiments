@@ -27,7 +27,7 @@ public class TopNPicker {
         }
 
         if (orderedDoubleInts.size() > maxCount)
-            orderedDoubleInts.subList(maxCount, orderedDoubleInts.size()-1).clear();
+            orderedDoubleInts.subList(maxCount, orderedDoubleInts.size()).clear();
     }
 
     public int getRandomTopIndex()

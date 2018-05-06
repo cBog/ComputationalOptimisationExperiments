@@ -25,17 +25,10 @@ public class JADE extends Algorithm {
         int archiveSize = getParameter("ArchiveSize").intValue();
         double cAdaptionParameter = getParameter("c");
 
-        int numberTopPercentage = (int)topPercentage*populationSize;
+        int numberTopPercentage = (int)(topPercentage*populationSize);
 
         double muF = 0.5; double muCR = 0.5;
         ArrayList<double[]> archive = new ArrayList<double[]>();
-
-        ArrayList<Integer> indexes = new ArrayList<Integer>(populationSize);
-
-        for (int i = 0; i < populationSize; i++)
-        {
-            indexes.add(i);
-        }
 
         double[][] population = new double[populationSize][problem.getDimension()];
         double[] populationFitness = new double[populationSize];
@@ -83,7 +76,7 @@ public class JADE extends Algorithm {
                 } while (randomPopulationIndex == randomBestIndex || randomPopulationIndex == i);
 
                 do {
-                    randomArchiveIndex = RandUtils.randomInteger(populationSize+archiveSize-1);
+                    randomArchiveIndex = RandUtils.randomInteger(populationSize+archive.size()-1);
                 } while (randomArchiveIndex == randomPopulationIndex || randomArchiveIndex == randomBestIndex || randomArchiveIndex == i);
 
                 double[] randomBest = population[randomBestIndex];

@@ -3,7 +3,6 @@ package SearchProblem.PathDrawer;
 import SearchProblem.Particle;
 import SearchProblem.SimpleAgentSearchProblem;
 import algorithms.CMAES;
-import algorithms.ClassicDifferentialEvolution;
 import algorithms.SimulatedAnnealing;
 import interfaces.Algorithm;
 import javafx.application.Application;
@@ -50,10 +49,16 @@ public class ZoomAndScrollApplication extends Application {
 //        a.setParameter("p4", 1e-5);
 //        a.setParameter("p5", 30.0);
 
-        a = new ClassicDifferentialEvolution();
-        a.setParameter("PopulationSize", 500.0);
-        a.setParameter("F", 0.75);
-        a.setParameter("CR", 0.9);
+//        a = new ClassicDifferentialEvolution();
+//        a.setParameter("PopulationSize", 500.0);
+//        a.setParameter("F", 0.75);
+//        a.setParameter("CR", 0.9);
+//
+//        a = new JADE();
+//        a.setParameter("PopulationSize", 500.0);
+//        a.setParameter("p", 0.05);
+//        a.setParameter("c", 0.05);
+//        a.setParameter("ArchiveSize", 2000.0);
 
         try {
             a.execute(problem, 50000);
