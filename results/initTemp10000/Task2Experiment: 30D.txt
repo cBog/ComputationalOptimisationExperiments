@@ -1,0 +1,10 @@
+##################### 30 D #####################
+Number of runs: 30
+Algorithms: SimulatedAnnealing 
+SimulatedAnnealing:(initTemp 10000.0)(minTemp 0.0)
+Problems:
+benchmarks.BaseFunctions.Sphere
+benchmarks.BaseFunctions.Schwefel
+benchmarks.BaseFunctions.Rastrigin
+benchmarks.BaseFunctions.Michalewicz
+
