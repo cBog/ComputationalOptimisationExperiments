@@ -64,11 +64,13 @@ public class ClassicDifferentialEvolution extends Algorithm {
             {
                 mutation = rand1Mutation(population, i, fScalar, indexes);
 
-                mutation = Misc.toro(mutation, problem.getBounds());
+                //TODO: saturate instead??!
+                mutation = Misc.saturate(mutation, problem.getBounds());
 
                 crossover = binomialXO(mutation, population[i], crScalar);
 
-                crossover = Misc.toro(crossover, problem.getBounds());
+                //TODO: saturate instead??!
+                //crossover = Misc.toro(crossover, problem.getBounds());
 
                 newPopulationFitness[i] = problem.f(crossover); computations++;
 
