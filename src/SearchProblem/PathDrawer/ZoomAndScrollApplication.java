@@ -2,6 +2,7 @@ package SearchProblem.PathDrawer;
 
 import SearchProblem.Particle;
 import SearchProblem.SimpleAgentSearchProblem;
+import algorithms.CMAES;
 import algorithms.JADEDecodedEvolvingWaypoints;
 import algorithms.SimulatedAnnealing;
 import interfaces.Algorithm;
@@ -33,14 +34,14 @@ public class ZoomAndScrollApplication extends Application {
     @Override
     public void start(Stage stage) {
 
-        SimpleAgentSearchProblem problem = SimpleAgentSearchProblem.CreateSearchProblem(45,500,500,50,2000);
+        SimpleAgentSearchProblem problem = SimpleAgentSearchProblem.CreateSearchProblem(70,500,500,50,2000);
         Algorithm a = new SimulatedAnnealing();
         a.setParameter("initTemp", 1.0e9);
         a.setParameter("minTemp", 0.00);
         a.setParameter("expCoolingFactor", 0.8);
         a.setParameter("perturbationFactor", 0.4);
 
-        //a = new CMAES();
+        a = new CMAES();
 //        a = new ISPO();
 //        a.setParameter("p0", 1.0);
 //        a.setParameter("p1", 10.0);
@@ -55,13 +56,16 @@ public class ZoomAndScrollApplication extends Application {
 //        a.setParameter("CR", 0.9);
 //
         a = new JADEDecodedEvolvingWaypoints();
+        //a = new JADE();
         a.setParameter("PopulationSize", 500.0);
         a.setParameter("p", 0.05);
         a.setParameter("c", 0.05);
         a.setParameter("ArchiveSize", 2000.0);
+        a.setParameter("freeze", 1.0);
+
 
         try {
-            a.execute(problem, 50000);
+            a.execute(problem, 100000);
         } catch (Exception e) {
             e.printStackTrace();
         }

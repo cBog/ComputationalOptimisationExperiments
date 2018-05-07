@@ -27,6 +27,10 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
         double topPercentage = getParameter("p");
         int archiveSize = getParameter("ArchiveSize").intValue();
         double cAdaptionParameter = getParameter("c");
+        double freezingConstant = getParameter("freeze");
+
+        double totalGenerations = (double)budget/(double)populationSize;
+        double generationCount = 1;
 
         int numberTopPercentage = (int)(topPercentage*populationSize);
 
@@ -95,9 +99,6 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
                     randomArchiveIndex = RandUtils.randomInteger(populationSize+archive.size()-1);
                 } while (randomArchiveIndex == randomPopulationIndex || randomArchiveIndex == randomBestIndex || randomArchiveIndex == i);
 
-//                double[] randomBest = population[randomBestIndex];
-//                double[] randomPopulation = population[randomPopulationIndex];
-//                double[] randomArchive;
                 double[][] randomBestWaypoints = populationWaypoints[randomBestIndex];
                 double[][] randomPopulationWaypoints = populationWaypoints[randomPopulationIndex];
                 double[][] randomArchiveWaypoints;
@@ -113,7 +114,6 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
                                 MatLab.multiply(F, MatLab.subtract(randomPopulationWaypoints, randomArchiveWaypoints))));
 
 
-                //TODO: put the crossover in here and do something smart
                 int selectedIndex = RandUtils.randomInteger(mutatedwaypoints.length);
                 double[][] crossedOverWaypoints = new double[mutatedwaypoints.length][2];
 
@@ -132,7 +132,11 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
                         dY = populationWaypoints[i][w][1] - previousLocation[1];
                     }
 
-                    crossedOver[w] = min(max(Math.atan2(dX, dY) - previousHeading, problem.getBounds()[w][0]), problem.getBounds()[w][1]);
+                    double saturationFactor = Math.exp(-((1-((double)w/(double)crossedOver.length))*freezingConstant*(generationCount/totalGenerations)));
+
+                    crossedOver[w] = min(max(Math.atan2(dX, dY) - previousHeading,
+                                    problem.getBounds()[w][0]*saturationFactor),
+                            problem.getBounds()[w][1]*saturationFactor);
 
                     previousHeading = crossedOver[w] + previousHeading;
 
@@ -142,10 +146,6 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
                     crossedOverWaypoints[w] = previousLocation;
 
                 }
-
-                //TODO: don't cross over based on waypoints if better but far away! Something like that..?
-                //mutated = saturate(mutated, problem.getBounds());
-
 
                 double crossedOverFitness = problem.f(crossedOver); computations++;
 
@@ -198,6 +198,8 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
             muF = ((1-cAdaptionParameter)*muCR)+(cAdaptionParameter*lehmerMeanSuccessfulF);
 
             fTrend.add(fitnessTrendCount++, populationBestN.getBestFitness());
+
+            generationCount++;
         }
 
 
