@@ -13,8 +13,8 @@ public class SimpleAgentSearchProblem extends Problem {
 
     private final double numberOfWaypoints;
     private List<Particle> particleDistribution;
-    private double startXPos,startYPos;
-    private double waypointDistance = 100;
+    public double startXPos,startYPos;
+    public double waypointDistance = 100;
 
     public SimpleAgentSearchProblem(int numberOfWaypoints, double[] bounds, int numberOfParticles, double startXPos, double startYPos) {
         super(numberOfWaypoints, bounds);
