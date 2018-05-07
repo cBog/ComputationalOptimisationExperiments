@@ -16,7 +16,7 @@ import static utils.MatLab.min;
 /**
  * Created by Mikolaj on 06/05/2018.
  */
-public class JADEDecodedEvolvingWaypoints extends Algorithm {
+public class JADEDEWExponentialFreezing extends Algorithm {
     @Override
     public RunAndStore.FTrend execute(Problem problem, int budget) throws Exception {
 
@@ -27,10 +27,10 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
         double topPercentage = getParameter("p");
         int archiveSize = getParameter("ArchiveSize").intValue();
         double cAdaptionParameter = getParameter("c");
-        //double freezingConstant = getParameter("freeze");
+        double freezingConstant = getParameter("freeze");
 
-        //double totalGenerations = (double)budget/(double)populationSize;
-        //double generationCount = 1;
+        double totalGenerations = (double)budget/(double)populationSize;
+        double generationCount = 1;
 
         int numberTopPercentage = (int)(topPercentage*populationSize);
 
@@ -132,10 +132,19 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
                         dY = populationWaypoints[i][w][1] - previousLocation[1];
                     }
 
+                    double saturationFactor = Math.exp(-((1-((double)w/(double)crossedOver.length))*freezingConstant*(generationCount/totalGenerations)));
+
                     double newBearing = Math.atan2(dX, dY);
 
+                    double newRelativeToOldBearing = newBearing - previousHeading + population[i][w];
+
+                    //saturate relative to old population
+                    double adjustedRelativeToOldBearing = min(max(newRelativeToOldBearing,
+                                    problem.getBounds()[w][0]*saturationFactor),
+                            problem.getBounds()[w][1]*saturationFactor);
+
                     //saturate actual
-                    crossedOver[w] = min(max(newBearing - previousHeading,
+                    crossedOver[w] = min(max(adjustedRelativeToOldBearing - population[i][w],
                                     problem.getBounds()[w][0]),
                             problem.getBounds()[w][1]);
 
@@ -200,6 +209,8 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
             muF = ((1-cAdaptionParameter)*muCR)+(cAdaptionParameter*lehmerMeanSuccessfulF);
 
             fTrend.add(fitnessTrendCount++, populationBestN.getBestFitness());
+
+            generationCount++;
         }
 
 
