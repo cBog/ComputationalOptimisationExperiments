@@ -73,8 +73,8 @@ public class SimulatedAnnealing extends Algorithm {
 
             }
 
-            if(fitnessCalculationCount%problemDimension==0)
-                fTrend.add(fitnessCalculationCount, particleFitness);
+            if(fitnessCalculationCount%500==0)
+                fTrend.add(fitnessCalculationCount/500, particleFitness);
 
             currentTemperature = currentTemperature * expCoolingFactor;
         }

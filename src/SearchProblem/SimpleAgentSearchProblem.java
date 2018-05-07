@@ -16,44 +16,91 @@ public class SimpleAgentSearchProblem extends Problem {
     public double startXPos,startYPos;
     public double waypointDistance = 100;
 
-    public SimpleAgentSearchProblem(int numberOfWaypoints, double[] bounds, int numberOfParticles, double startXPos, double startYPos) {
+    public SimpleAgentSearchProblem(int numberOfWaypoints, double[] bounds, int numberOfParticles, double startXPos, double startYPos, int problemNumber) {
         super(numberOfWaypoints, bounds);
         this.numberOfWaypoints = numberOfWaypoints;
         this.startXPos = startXPos;
         this.startYPos = startYPos;
-
-        particleDistribution = new ArrayList<Particle>();
         double maxSearchSpace = 1000;
 
-        for (int i=0; i<numberOfParticles/5; i++)
-        {
-            particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace/2, maxSearchSpace / 20),
-                    RandUtils.gaussian(maxSearchSpace/2, maxSearchSpace/20)));
+        switch (problemNumber){
+            case 0:
+                particleDistribution = new ArrayList<Particle>();
+                for (int i=0; i<numberOfParticles; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(500, maxSearchSpace / 16),
+                            RandUtils.gaussian(800, maxSearchSpace/16)));
+                }
+                break;
+            case 1:
+                particleDistribution = new ArrayList<Particle>();
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace/2, maxSearchSpace / 30),
+                            RandUtils.gaussian(maxSearchSpace/2, maxSearchSpace/30)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace / 16),
+                            RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace/16)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace / 16),
+                            RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace/16)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace / 30),
+                            RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace/30)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace / 30),
+                            RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace/30)));
+                }
+                break;
+            case 2:
+                particleDistribution = new ArrayList<Particle>();
+                maxSearchSpace = 1000;
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(200, maxSearchSpace / 20),
+                            RandUtils.gaussian(300, maxSearchSpace/30)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(900, maxSearchSpace / 20),
+                            RandUtils.gaussian(900, maxSearchSpace/16)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(700, maxSearchSpace / 40),
+                            RandUtils.gaussian(400, maxSearchSpace/40)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(300, maxSearchSpace / 20),
+                            RandUtils.gaussian(800, maxSearchSpace/30)));
+                }
+
+                for (int i=0; i<numberOfParticles/5; i++)
+                {
+                    particleDistribution.add(new Particle(RandUtils.gaussian(1000, maxSearchSpace / 10),
+                            RandUtils.gaussian(100, maxSearchSpace/50)));
+                }
+                break;
         }
 
-        for (int i=0; i<numberOfParticles/5; i++)
-        {
-            particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace / 20),
-                    RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace/16)));
-        }
-
-        for (int i=0; i<numberOfParticles/5; i++)
-        {
-            particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace / 20),
-                    RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace/16)));
-        }
-
-        for (int i=0; i<numberOfParticles/5; i++)
-        {
-            particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace / 20),
-                    RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace/20)));
-        }
-
-        for (int i=0; i<numberOfParticles/5; i++)
-        {
-            particleDistribution.add(new Particle(RandUtils.gaussian(maxSearchSpace*3/4, maxSearchSpace / 20),
-                    RandUtils.gaussian(maxSearchSpace/4, maxSearchSpace/20)));
-        }
 
 //        double gaussXMean = RandUtils.uniform(0,maxSearchSpace);
 //        double gaussYMean = RandUtils.uniform(0,maxSearchSpace);
@@ -83,7 +130,6 @@ public class SimpleAgentSearchProblem extends Problem {
 //            particleDistribution.add(new Particle(RandUtils.gaussian(gaussXMean, maxSearchSpace/16),
 //                    RandUtils.gaussian(gaussYMean, maxSearchSpace/16)));
 
-        //TODO: think about start and end points!?
     }
 
 //    public SimpleAgentSearchProblem(int numberOfWaypoints, double[][] bounds, int numberOfParticles) {
@@ -120,7 +166,6 @@ public class SimpleAgentSearchProblem extends Problem {
 //            particleDistribution.add(new Particle(RandUtils.gaussian(gaussXMean, bounds[0][1]/16),
 //                    RandUtils.gaussian(gaussYMean, bounds[1][1]/16)));
 //
-//        //TODO: think about start and end points!?
 //    }
 
     @Override
@@ -153,13 +198,31 @@ public class SimpleAgentSearchProblem extends Problem {
 //        return new SimpleAgentSearchProblem(numberOfWaypoints, bounds, numberOfParticles);
 //    }
 
-    public static SimpleAgentSearchProblem CreateSearchProblem(double maxTurnDeg, double startX, double startY, int numberOfWaypoints, int numberOfParticles)
+    public static SimpleAgentSearchProblem CreateSearchProblem0(double maxTurnDeg, double startX, double startY, int numberOfWaypoints, int numberOfParticles)
     {
         double maxTurnRad = (maxTurnDeg / 180.0) * Math.PI;
 
         double[] bounds = new double[]{-maxTurnRad, maxTurnRad};
 
-        return new SimpleAgentSearchProblem(numberOfWaypoints, bounds, numberOfParticles, startX, startY);
+        return new SimpleAgentSearchProblem(numberOfWaypoints, bounds, numberOfParticles, startX, startY,0);
+    }
+
+    public static SimpleAgentSearchProblem CreateSearchProblem1(double maxTurnDeg, double startX, double startY, int numberOfWaypoints, int numberOfParticles)
+    {
+        double maxTurnRad = (maxTurnDeg / 180.0) * Math.PI;
+
+        double[] bounds = new double[]{-maxTurnRad, maxTurnRad};
+
+        return new SimpleAgentSearchProblem(numberOfWaypoints, bounds, numberOfParticles, startX, startY,1);
+    }
+
+    public static SimpleAgentSearchProblem CreateSearchProblem2(double maxTurnDeg, double startX, double startY, int numberOfWaypoints, int numberOfParticles)
+    {
+        double maxTurnRad = (maxTurnDeg / 180.0) * Math.PI;
+
+        double[] bounds = new double[]{-maxTurnRad, maxTurnRad};
+
+        return new SimpleAgentSearchProblem(numberOfWaypoints, bounds, numberOfParticles, startX, startY,2);
     }
 
     public List<Particle> getParticles() {
