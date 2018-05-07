@@ -109,47 +109,43 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
                     randomArchiveWaypoints = archiveWaypoints.get(randomArchiveIndex - populationSize);
 
                 double[][] mutatedwaypoints = MatLab.sum(populationWaypoints[i],
-                        MatLab.sum(MatLab.multiply(F, MatLab.subtract(randomBestWaypoints,populationWaypoints[i])),
-                                MatLab.multiply(F, MatLab.subtract(randomPopulationWaypoints,randomArchiveWaypoints))));
+                        MatLab.sum(MatLab.multiply(F, MatLab.subtract(randomBestWaypoints, populationWaypoints[i])),
+                                MatLab.multiply(F, MatLab.subtract(randomPopulationWaypoints, randomArchiveWaypoints))));
 
 
                 //TODO: put the crossover in here and do something smart
-                double[] mutated = new double[mutatedwaypoints.length];
+                int selectedIndex = RandUtils.randomInteger(mutatedwaypoints.length);
+               // double[] crossedOver = new double[mutatedwaypoints.length];
+                double[][] crossedOverWaypoints = new double[mutatedwaypoints.length][2];
+
+                //CROSSOVER AND DECODING
+
+                double[] crossedOver = new double[mutatedwaypoints.length];
                 double[] previousLocation = new double[]{searchProblem.startXPos,searchProblem.startYPos};
                 double previousHeading = 0;
-                for (int w = 0; w < mutated.length; w++)
+                for (int w = 0; w < crossedOver.length; w++)
                 {
                     double dX = mutatedwaypoints[w][0] - previousLocation[0];
                     double dY = mutatedwaypoints[w][1] - previousLocation[1];
 
-                    mutated[w] = min(max(Math.atan2(dX,dY) - previousHeading, problem.getBounds()[w][0]), problem.getBounds()[w][1]);
+                    if (!(w == selectedIndex || RandUtils.random() < CR)) {
+                        dX = populationWaypoints[i][w][0] - previousLocation[0];
+                        dY = populationWaypoints[i][w][1] - previousLocation[1];
+                    }
 
-                    previousHeading = mutated[w] + previousHeading;
+                    crossedOver[w] = min(max(Math.atan2(dX, dY) - previousHeading, problem.getBounds()[w][0]), problem.getBounds()[w][1]);
+
+                    previousHeading = crossedOver[w] + previousHeading;
 
                     previousLocation[0] = previousLocation[0] + (Math.sin(previousHeading) * searchProblem.waypointDistance);
                     previousLocation[1] = previousLocation[1] + (Math.cos(previousHeading) * searchProblem.waypointDistance);
+
+                    crossedOverWaypoints[w] = previousLocation;
+
                 }
 
                 //TODO: don't cross over based on waypoints if better but far away! Something like that..?
                 //mutated = saturate(mutated, problem.getBounds());
-
-
-                //CROSS OVER
-
-                double[] crossedOver = binomialXO(population[i], mutated, CR);
-
-                double[][] crossedOverWaypoints = new double[crossedOver.length][2];
-                previousLocation = new double[]{searchProblem.startXPos,searchProblem.startYPos};
-                previousHeading = 0;
-
-                for (int w = 0; w < problem.getDimension(); w++){
-                    previousHeading = previousHeading + crossedOver[w];
-
-                    crossedOverWaypoints[w][0] = previousLocation[0] + (Math.sin(previousHeading) * searchProblem.waypointDistance);
-                    crossedOverWaypoints[w][1] = previousLocation[1] + (Math.cos(previousHeading) * searchProblem.waypointDistance);
-
-                    previousLocation = crossedOverWaypoints[w];
-                }
 
 
                 double crossedOverFitness = problem.f(crossedOver); computations++;
@@ -176,7 +172,7 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
             }
 
             while (archive.size() > archiveSize) {
-                int randomIndex = RandUtils.randomInteger(archive.size()-1);
+                int randomIndex = RandUtils.randomInteger(archive.size() - 1);
                 archive.remove(randomIndex);
                 archiveWaypoints.remove(randomIndex);
             }
