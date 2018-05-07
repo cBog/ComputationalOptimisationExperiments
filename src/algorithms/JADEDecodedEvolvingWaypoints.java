@@ -115,7 +115,6 @@ public class JADEDecodedEvolvingWaypoints extends Algorithm {
 
                 //TODO: put the crossover in here and do something smart
                 int selectedIndex = RandUtils.randomInteger(mutatedwaypoints.length);
-               // double[] crossedOver = new double[mutatedwaypoints.length];
                 double[][] crossedOverWaypoints = new double[mutatedwaypoints.length][2];
 
                 //CROSSOVER AND DECODING
