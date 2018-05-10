@@ -2,6 +2,7 @@ package SearchProblem.PathDrawer;
 
 import SearchProblem.Particle;
 import SearchProblem.SimpleAgentSearchProblem;
+import algorithms.CMAES;
 import algorithms.JADEDEWExponentialFreezing;
 import algorithms.SimulatedAnnealing;
 import interfaces.Algorithm;
@@ -61,7 +62,7 @@ public class ZoomAndScrollApplication extends Application {
         a.setParameter("c", 0.05);
         a.setParameter("ArchiveSize", 2000.0);
         a.setParameter("freeze", 5.0);
-        //a = new CMAES();
+        a = new CMAES();
 
         try {
             a.execute(problem, 100000);

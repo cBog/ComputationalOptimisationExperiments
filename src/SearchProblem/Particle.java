@@ -6,6 +6,7 @@ package SearchProblem;
 public class Particle {
     static double waypointInterval = 2.0;
     static double glimpseDetectionProbability = 5.0e3;
+    static double searchHeight = 500;
     double x,y;
 
     public Particle (double x, double y)
@@ -38,15 +39,15 @@ public class Particle {
             double c = Math.abs(getY() - wp1y);
             double d = Math.abs(getY() - wp2y);
 
-            double numerator1 = -((a*b) + (c*d) + (2*waypointInterval))*glimpseDetectionProbability;
+            double numerator1 = -((a*b) + (c*d) + (2*waypointInterval))*glimpseDetectionProbability*searchHeight;
 
-            double denominator1 = (((a*a)*((b*b)-2))+(2*a*b*c*d)+((c*c)*((d*d)-2)))*
-                    Math.sqrt((a*a)+(2*a*b*waypointInterval)+(c*c)+(2*c*d*waypointInterval)+(2*waypointInterval*waypointInterval));
+            double denominator1 = (((a*a)*((b*b)-2))+(2*a*b*c*d)+((c*c)*((d*d)-2))-(2*(searchHeight*searchHeight)))*
+                    Math.sqrt((a*a)+(2*a*b*waypointInterval)+(c*c)+(2*c*d*waypointInterval)+(searchHeight*searchHeight)+(2*waypointInterval*waypointInterval));
 
-            double numerator2 = -((a*b) + (c*d))*glimpseDetectionProbability;
+            double numerator2 = -((a*b) + (c*d))*glimpseDetectionProbability*searchHeight;
 
-            double denominator2 = (((a*a)*((b*b)-2))+(2*a*b*c*d)+((c*c)*((d*d)-2)))*
-                    Math.sqrt((a*a)+(c*c));
+            double denominator2 = (((a*a)*((b*b)-2))+(2*a*b*c*d)+((c*c)*((d*d)-2))-(2*(searchHeight*searchHeight)))*
+                    Math.sqrt((a*a)+(c*c)+(searchHeight*searchHeight));
 
             //TODO: Check for no movement as this causes NaNs
             //TODO: you can see that the equation could potentially be altered to take into account drifting particles and changing altitude. Look into this?

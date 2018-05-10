@@ -67,9 +67,9 @@ public class Task3Experiments extends Experiment {
 
 
 
-        add(SimpleAgentSearchProblem.CreateSearchProblem0(70, 500, 500, 50, 300));
-        add(SimpleAgentSearchProblem.CreateSearchProblem1(70, 500, 500, 50, 300));
-        add(SimpleAgentSearchProblem.CreateSearchProblem2(70, 500, 500, 50, 300));
+        add(SimpleAgentSearchProblem.CreateSearchProblem0(70, 500, 500, 50, 1000));
+        add(SimpleAgentSearchProblem.CreateSearchProblem1(70, 500, 500, 50, 1000));
+        add(SimpleAgentSearchProblem.CreateSearchProblem2(70, 500, 500, 50, 1000));
 
 
     }
