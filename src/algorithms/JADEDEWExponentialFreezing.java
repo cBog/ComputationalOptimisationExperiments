@@ -132,7 +132,7 @@ public class JADEDEWExponentialFreezing extends Algorithm {
                         dY = populationWaypoints[i][w][1] - previousLocation[1];
                     }
 
-                    double saturationFactor = Math.exp(-((1-((double)w/(double)crossedOver.length))*freezingConstant*(generationCount/totalGenerations)));
+                    double saturationFactor = 2*Math.exp(-((1-((double)w/(double)crossedOver.length))*freezingConstant*(generationCount/totalGenerations)));
 
                     double newBearing = Math.atan2(dX, dY);
 

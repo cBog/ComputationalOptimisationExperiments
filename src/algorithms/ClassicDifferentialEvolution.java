@@ -79,6 +79,7 @@ public class ClassicDifferentialEvolution extends Algorithm {
                 }
                 else {
                     newPopulation[i] = population[i];
+                    newPopulationFitness[i] = populationFitness[i];
                 }
 
                 if (newPopulationFitness[i] < newPopulationFitness[newPopulationbest])

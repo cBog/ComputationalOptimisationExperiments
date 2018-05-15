@@ -2,7 +2,6 @@ package SearchProblem.PathDrawer;
 
 import SearchProblem.Particle;
 import SearchProblem.SimpleAgentSearchProblem;
-import algorithms.CMAES;
 import algorithms.JADEDEWExponentialFreezing;
 import algorithms.SimulatedAnnealing;
 import interfaces.Algorithm;
@@ -34,7 +33,7 @@ public class ZoomAndScrollApplication extends Application {
     @Override
     public void start(Stage stage) {
 
-        SimpleAgentSearchProblem problem = SimpleAgentSearchProblem.CreateSearchProblem2(70, 500, 500, 50, 300);
+        SimpleAgentSearchProblem problem = SimpleAgentSearchProblem.CreateSearchProblem2(70, 500, 500, 100, 1000);
         Algorithm a = new SimulatedAnnealing();
         a.setParameter("initTemp", 1.0e9);
         a.setParameter("minTemp", 0.00);
@@ -61,14 +60,14 @@ public class ZoomAndScrollApplication extends Application {
         a.setParameter("p", 0.05);
         a.setParameter("c", 0.05);
         a.setParameter("ArchiveSize", 2000.0);
-        a.setParameter("freeze", 5.0);
-        a = new CMAES();
+        a.setParameter("freeze", 2.0);
+        //a = new CMAES();
 
-        try {
-            a.execute(problem, 100000);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            a.execute(problem, 200000);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         Group group = new Group();
 
@@ -91,10 +90,11 @@ public class ZoomAndScrollApplication extends Application {
         //rect.setStrokeWidth(5);
         //canvas.getChildren().add(rect);
 
+        double[] route = new double[]{-1.047,0.06446,0.2039,1.031,1.031,1.031,-1.047,0.01618,0.01613,0.01609,0.01604,0.01599,-1.047,-1.047,-1.047,-0.7674,0.0,0.0,0.0,-4.441E-16,4.441E-16,-4.441E-16,0.0,4.441E-16,1.047,1.047,1.047,1.047,1.047,-1.047,-1.047,-1.047,-1.047,-1.047,0.1799,0.1899,0.4022,1.047,1.047,1.047,0.8214,0.0,0.0,-0.2727,-0.2834,-0.7113,-1.047,-1.047,-1.008,0.0,8.882E-16,0.3611,1.047,1.047,1.047,1.047,0.4437,-1.036,-0.4432,-0.4554,-1.047,-1.047,-1.047,-0.136,-4.441E-16,0.5302,0.543,1.047,1.047,1.047,0.5516,0.0,-0.6222,-0.6358,-0.6495,-0.6633,-0.6772,-1.047,-0.7918,0.0,1.332E-15,0.7484,1.047,1.047,1.047,1.047,0.1111,-1.047,-1.047,-1.047,-1.047,0.8999,1.047,1.047,-1.045,-0.9641,1.047,1.007,-1.047,-1.047};
         drawParticles(problem.getParticles());
-        drawRoute(problem.anglesToWaypoints(a.getFinalBest()));
+        drawRoute(problem.anglesToWaypoints(route));
         try {
-            probabilityLabel.setText("POD="+(1-problem.f(a.getFinalBest())));
+            probabilityLabel.setText("POD="+(1-problem.f(route)));
         } catch (Exception e) {
             e.printStackTrace();
         }

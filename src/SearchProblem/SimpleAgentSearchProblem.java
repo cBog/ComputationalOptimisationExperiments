@@ -180,7 +180,7 @@ public class SimpleAgentSearchProblem extends Problem {
             cumulativeProbability += p.calculateDetectionScore(waypoints);
         }
 
-        return 1 - (cumulativeProbability/(double)particleDistribution.size());
+        return (cumulativeProbability/(double)particleDistribution.size());
     }
 
 //    public static SimpleAgentSearchProblem CreateSearchProblem(double xMax, double yMax, int numberOfWaypoints, int numberOfParticles)

@@ -5,8 +5,8 @@ package SearchProblem;
  */
 public class Particle {
     static double waypointInterval = 2.0;
-    static double glimpseDetectionProbability = 5.0e3;
-    static double searchHeight = 500;
+    static double glimpseDetectionProbability = 5.0e2;
+    static double searchHeight = 50;
     double x,y;
 
     public Particle (double x, double y)
@@ -39,12 +39,12 @@ public class Particle {
             double c = Math.abs(getY() - wp1y);
             double d = Math.abs(getY() - wp2y);
 
-            double numerator1 = -((a*b) + (c*d) + (2*waypointInterval))*glimpseDetectionProbability*searchHeight;
+            double numerator1 = -((a*b) + (c*d) + (2*waypointInterval));
 
             double denominator1 = (((a*a)*((b*b)-2))+(2*a*b*c*d)+((c*c)*((d*d)-2))-(2*(searchHeight*searchHeight)))*
                     Math.sqrt((a*a)+(2*a*b*waypointInterval)+(c*c)+(2*c*d*waypointInterval)+(searchHeight*searchHeight)+(2*waypointInterval*waypointInterval));
 
-            double numerator2 = -((a*b) + (c*d))*glimpseDetectionProbability*searchHeight;
+            double numerator2 = -((a*b) + (c*d));
 
             double denominator2 = (((a*a)*((b*b)-2))+(2*a*b*c*d)+((c*c)*((d*d)-2))-(2*(searchHeight*searchHeight)))*
                     Math.sqrt((a*a)+(c*c)+(searchHeight*searchHeight));
@@ -57,13 +57,13 @@ public class Particle {
             if (denominator2 == Double.NaN)
                 denominator2 = Double.MAX_VALUE;
 
-            cumulativeProbability += (numerator1/denominator1 - numerator2/denominator2);
+            cumulativeProbability += (numerator1/denominator1 - numerator2/denominator2)*glimpseDetectionProbability*searchHeight;
 
             wp1x = wp2X;
             wp1y = wp2y;
         }
 
-        return 1- Math.exp(-cumulativeProbability);
+        return Math.exp(-cumulativeProbability);
     }
 
     public static void main(String[] args)
