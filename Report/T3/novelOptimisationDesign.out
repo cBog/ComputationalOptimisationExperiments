@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Problem Description}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Probability of Detection}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Probability of Containment}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Real Valued Fitness Function for a UAV Search Plan}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Encoding Waypoints as Headings}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Proposed Algorithm}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{JADE}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Decoding Waypoints}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Temporal Route Freezing}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Simulation}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Description of Scenarios}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Compared Algorithms}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{Implementation and Performance Measures}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Results and Analysis}{}% 15
+\BOOKMARK [1][-]{section.6}{Conclusions and Discussion}{}% 16
+\BOOKMARK [1][-]{section*.1}{References}{}% 17
+\BOOKMARK [1][-]{section*.2}{Appendix A: Integrating the Inverse Cubed Law of Visual Detection Between Two Waypoints}{}% 18

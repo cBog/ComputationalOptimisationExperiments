@@ -1,0 +1,203 @@
+\begin{thebibliography}{10}
+
+\bibitem{Besada-portas2010}
+E.~Besada-portas and L.~D. Torre, ``{Evolutionary Trajectory Planner for
+  Multiple UAVs in Realistic Scenarios},'' vol.~26, no.~4, pp.~619--634, 2010.
+
+\bibitem{Yang2015}
+P.~Yang, K.~Tang, J.~A. Lozano, and X.~Cao, ``{Path Planning for Single
+  Unmanned Aerial Vehicle by Separately Evolving Waypoints},'' {\em IEEE
+  Transactions on Robotics}, vol.~31, no.~5, pp.~1130--1146, 2015.
+
+\bibitem{Sarris2001}
+Z.~Sarris, ``{Survey of UAV applications in civil markets (June 2001)},'' in
+  {\em Proceedings of the IEEE Mediterranean Conference on Control and
+  Automation}, 2001.
+
+\bibitem{Cai2014}
+G.~Cai, J.~Dias, and L.~Seneviratne, ``{A Survey of Small-Scale Unmanned Aerial
+  Vehicles: Recent Advances and Future Development Trends},'' {\em Unmanned
+  Systems}, vol.~02, no.~02, pp.~175--199, 2014.
+
+\bibitem{StuartMAdams2011}
+C.~J.~F. {Stuart M Adams}, ``A survey of unmanned aerial vehicle (uav) usage
+  for imagery collection in disaster research and management,'' {\em
+  Proceedings of the Ninth International Workshop on Remote Sensing for
+  Disaster Response}, pp.~15--16, 2011.
+
+\bibitem{Julian_Tan_Kok_Ping-2012}
+J.~T.~K. Ping, A.~E. Ling, T.~J. Quan, and C.~Y. Dat, ``{Generic unmanned
+  aerial vehicle (UAV) for civilian application-A feasibility assessment and
+  market survey on civilian application for aerial imaging},'' in {\em 2012
+  IEEE Conference on Sustainable Utilization and Development in Engineering and
+  Technology (STUDENT)}, pp.~289--294, oct 2012.
+
+\bibitem{Goerzen2010}
+C.~Goerzen, Z.~Kong, and B.~Mettler, {\em {A survey of motion planning
+  algorithms from the perspective of autonomous UAV guidance}}, vol.~57.
+\newblock 2010.
+
+\bibitem{Zheng2005}
+C.~Zheng, L.~Li, F.~Xu, F.~Sun, and M.~Ding, ``{Evolutionary route planner for
+  unmanned air vehicles},'' {\em IEEE Transactions on Robotics}, vol.~21,
+  no.~4, pp.~609--620, 2005.
+
+\bibitem{Pehlivanoglu2007}
+Y.~V. Pehlivanoglu, ``{Vibrational Genetic Algorithm Based Path Planner for
+  Autonomous UAV in Spatial Data Based Environments},'' 2007.
+
+\bibitem{Dasa2011}
+S.~Dasa, S.~Maity, B.~Y. Qu, and P.~N. Suganthan, ``{Real-parameter
+  evolutionary multimodal optimization-A survey of the state-of-the-art},''
+  {\em Swarm and Evolutionary Computation}, vol.~1, no.~2, pp.~71--78, 2011.
+
+\bibitem{Zhang2009}
+J.~Zhang and A.~C. Sanderson, ``{JADE: Adaptive differential evolution with
+  optional external archive},'' {\em IEEE Transactions on Evolutionary
+  Computation}, vol.~13, no.~5, pp.~945--958, 2009.
+
+\bibitem{Yang2016}
+P.~Yang, G.~Lu, K.~Tang, and X.~Yao, ``{A multi-modal optimization approach to
+  single path planning for unmanned aerial vehicle},'' {\em 2016 IEEE Congress
+  on Evolutionary Computation (CEC)}, pp.~1735--1742, 2016.
+
+\bibitem{Tang2016}
+K.~Tang, P.~Yang, and X.~Yao, ``{Negatively Correlated Search : The General
+  Idea},'' {\em IEEE Journal On Selected Areas in Communications}, vol.~34,
+  no.~3, pp.~542--550, 2016.
+
+\bibitem{Besada-portas2013}
+E.~Besada-portas, L.~D. Torre, A.~Moreno, and J.~L. Risco-mart{\'{i}}n,
+  ``{Information Sciences On the performance comparison of multi-objective
+  evolutionary UAV path planners},'' {\em Information Sciences}, vol.~238,
+  pp.~111--125, 2013.
+
+\bibitem{Yang2014}
+P.~Yang, K.~Tang, and J.~A. Lozano, ``{Estimation of Distribution Algorithms
+  based Unmanned Aerial Vehicle Path Planner Using a New Coordinate System},''
+  {\em 2014 IEEE Congress on Evolutionary Computation (CEC'2014)},
+  pp.~1469--1476, 2014.
+
+\bibitem{Dorigo2006}
+M.~Dorigo, M.~Birattari, and T.~Stutzle, ``{Ant colony optimization},'' {\em
+  IEEE Computational Intelligence Magazine}, vol.~1, no.~4, pp.~28--39, 2006.
+
+\bibitem{Zhang2016}
+M.~Zhang, C.~Su, Y.~Liu, M.~Hu, and Y.~Zhu, ``{Unmanned Aerial Vehicle Route
+  Planning in the Presence of a Threat Environment Based on a Virtual Globe
+  Platform},'' {\em ISPRS International Journal of Geo-Information}, vol.~5,
+  no.~10, p.~184, 2016.
+
+\bibitem{Wang2017}
+H.~Wang, B.~Yan, X.~Li, X.~Luo, Q.~Yang, and W.~Yan, ``{On optimal Path
+  Planning for UAV based Patrolling in Complex 3D Topographies},'' {\em 2016
+  IEEE International Conference on Information and Automation, IEEE ICIA 2016},
+  vol.~1, no.~August, pp.~986--990, 2016.
+
+\bibitem{Lin2014}
+L.~Lin and M.~A. Goodrich, ``{Hierarchical heuristic search using a gaussian
+  mixture model for UAV coverage planning},'' {\em IEEE Transactions on
+  Cybernetics}, vol.~44, no.~12, pp.~2532--2544, 2014.
+
+\bibitem{Lin2009}
+L.~Lin and M.~A. Goodrich, ``{UAV intelligent path planning for wilderness
+  search and rescue},'' {\em 2009 IEEE/RSJ International Conference on
+  Intelligent Robots and Systems, IROS 2009}, vol.~0, no.~1, pp.~709--714,
+  2009.
+
+\bibitem{Agcayazi2016}
+M.~T. Agcayazi, E.~Cawi, A.~Jurgenson, P.~Ghassemi, and G.~Cook, ``{ResQuad:
+  Toward a semi-autonomous wilderness search and rescue unmanned aerial
+  system},'' {\em 2016 International Conference on Unmanned Aircraft Systems,
+  ICUAS 2016}, pp.~898--904, 2016.
+
+\bibitem{Clark2013}
+S.~Clark and M.~A. Goodrich, ``{A hierarchical flight planner for sensor-driven
+  UAV missions},'' {\em Proceedings - IEEE International Workshop on Robot and
+  Human Interactive Communication}, pp.~509--514, 2013.
+
+\bibitem{hastings1970monte}
+W.~K. Hastings, ``Monte carlo sampling methods using markov chains and their
+  applications,'' {\em Biometrika}, vol.~57, no.~1, pp.~97--109, 1970.
+
+\bibitem{doi:10.1287/opre.4.3.324}
+B.~O. Koopman, ``The theory of search. i. kinematic bases,'' {\em Operations
+  Research}, vol.~4, no.~3, pp.~324--346, 1956.
+
+\bibitem{doi:10.1287/opre.4.5.503}
+B.~O. Koopman, ``{The Theory of Search. II. Target Detection},'' {\em
+  Operations Research}, vol.~4, no.~5, pp.~503--531, 1956.
+
+\bibitem{doi:10.1287/opre.5.5.613}
+B.~O. Koopman, ``{The Theory of Search. III. The Optimum Distribution of
+  Searching Effort.},'' {\em Operations Research}, vol.~5, no.~5, pp.~613--626,
+  1957.
+
+\bibitem{Washburn1993}
+F.~O.~R. Washburn, ``{Inverse Nth Power Detection Law for Washburn's Lateral
+  Range Curve},'' {\em Journal of the Operations Research Society of Japan},
+  vol.~90, no.~3, 1993.
+
+\bibitem{Richardson1980}
+H.~R. Richardson and J.~H. Discenza, ``{United States Coast Guard
+  Computer-Assisted Search Planning System (Casp).},'' {\em Naval research
+  logistics quarterly}, vol.~27, no.~4, pp.~659--680, 1980.
+
+\bibitem{Allen2006}
+A.~A. Allen, ``{Leeway Divergence},'' tech. rep., U.S. Coast Guard Research and
+  Development Center, 2006.
+
+\bibitem{Liao2010}
+G.~Liao and M.~Li, ``{SARGIS: A GIS-based decision-making support system for
+  maritime search and rescue},'' {\em Proceedings of the International
+  Conference on E-Business and E-Government, ICEE 2010}, no.~c, pp.~1571--1574,
+  2010.
+
+\bibitem{ODonnell2006}
+J.~O'Donnell, D.~Ullman, M.~Spaulding, E.~Howlett, T.~Fake, P.~Hall, T.~Isaji,
+  C.~Edwards, E.~Anderson, T.~McClay, J.~Kohut, A.~Allen, S.~Lester, C.~Turner,
+  and M.~Lewandowski, ``{Integration of Coastal Ocean Dynamics Application
+  Radar (CODAR) and Short Term Predictive System (STPS) Surface Current
+  Estimates into the Search and Rescue Optimal Planning System},'' tech. rep.,
+  U.S. Coast Guard Research and Development Center, 2006.
+
+\bibitem{BREIVIK200899}
+{\O}.~Breivik and A.~A. Allen, ``{An operational search and rescue model for
+  the Norwegian Sea and the North Sea},'' {\em Journal of Marine Systems},
+  vol.~69, no.~1, pp.~99--113, 2008.
+
+\bibitem{ABIZEID2005630}
+I.~Abi-Zeid and J.~R. Frost, ``{SARPlan: A decision support system for Canadian
+  Search and Rescue Operations},'' {\em European Journal of Operational
+  Research}, vol.~162, no.~3, pp.~630--653, 2005.
+
+\bibitem{storn1997differential}
+R.~Storn and K.~Price, ``Differential evolution--a simple and efficient
+  heuristic for global optimization over continuous spaces,'' {\em Journal of
+  global optimization}, vol.~11, no.~4, pp.~341--359, 1997.
+
+\bibitem{mezura2006comparative}
+E.~Mezura-Montes, J.~Vel{\'a}zquez-Reyes, and C.~A. Coello~Coello, ``A
+  comparative study of differential evolution variants for global
+  optimization,'' in {\em Proceedings of the 8th annual conference on Genetic
+  and evolutionary computation}, pp.~485--492, ACM, 2006.
+
+\bibitem{Das2011}
+S.~Das and P.~N. Suganthan, ``{Differential evolution: A survey of the
+  state-of-the-art},'' {\em IEEE Transactions on Evolutionary Computation},
+  vol.~15, no.~1, pp.~4--31, 2011.
+
+\bibitem{Liu2005}
+J.~Liu and J.~Lampinen, ``{A Fuzzy Adaptive Differential Evolution
+  Algorithm},'' {\em Soft Computing}, vol.~9, no.~6, pp.~448--462, 2005.
+
+\bibitem{S.KirkpatrickC.D.GelattJr.1983}
+M.~P.~V. {S. Kirkpatrick, C. D. Gelatt Jr.}, ``{Optimization by Simulated
+  Annealing},'' {\em Science}, vol.~220, no.~4598, pp.~671--680, 1983.
+
+\bibitem{Kirkpatrick1984}
+S.~Kirkpatrick, ``{Optimization by simulated annealing: Quantitative
+  studies},'' {\em Journal of statistical physics}, vol.~34, pp.~975--986,
+  1984.
+
+\end{thebibliography}

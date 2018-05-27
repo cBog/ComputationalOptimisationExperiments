@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: novelOptimisationDesign.aux
+The style file: ieeetr.bst
+Database file #1: myReferences.bib
+Warning--I didn't find a database entry for "Zhang2015"
+Warning--empty journal in Besada-portas2010
+Warning--can't use both volume and number fields in Goerzen2010
+Warning--empty publisher in Goerzen2010
+Warning--empty journal in Pehlivanoglu2007
+You've used 39 entries,
+            1876 wiz_defined-function locations,
+            743 strings with 11265 characters,
+and the built_in function-call counts, 12060 in all, are:
+= -- 1280
+> -- 394
+< -- 0
++ -- 148
+- -- 109
+* -- 861
+:= -- 1646
+add.period$ -- 40
+call.type$ -- 39
+change.case$ -- 40
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 614
+empty$ -- 1094
+format.name$ -- 109
+if$ -- 2954
+int.to.chr$ -- 0
+int.to.str$ -- 39
+missing$ -- 38
+newline$ -- 121
+num.names$ -- 39
+pop$ -- 85
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 473
+stack$ -- 0
+substring$ -- 1019
+swap$ -- 294
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 135
+width$ -- 41
+write$ -- 400
+(There were 5 warnings)
